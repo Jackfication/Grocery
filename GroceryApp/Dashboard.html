@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="search-bar">
+            <input type="text" id="search-items" placeholder="Search items...">
+            <button id="search-btn">🔍</button>
+        </div>
+        <div class="cart">
+            <button id="cart-btn">🛒</button>
+        </div>
+    </header>
+
+    <section class="categories">
+        <!-- Categories will be dynamically displayed here -->
+    </section>
+
+    <section class="sort-by">
+        <label for="sort-options">Sort by:</label>
+        <select id="sort-options">
+            <option value="category">Category</option>
+            <option value="price">Price</option>
+            <option value="name">Name</option>
+        </select>
+    </section>
+
+    <section class="product-list">
+        <!-- Product cards with images -->
+        <div class="product-card">
+            <img src="Images/apple.png" alt="Apple"> 
+            <h3>Apple</h3>
+            <p>$12</p>
+            <button class="add-to-cart-btn" data-id="1">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="Images/broccoli.png" alt="Broccoli">
+            <h3>Broccoli</h3>
+            <p>$12</p>
+            <button class="add-to-cart-btn" data-id="2">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="Images/Breast.png" alt="Chicken Breast">
+            <h3>Chicken Breast</h3>
+            <p>$15</p>
+            <button class="add-to-cart-btn" data-id="3">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="Images/Beef.png" alt="Beef Steak">
+            <h3>Beef Steak</h3>
+            <p>$20</p>
+            <button class="add-to-cart-btn" data-id="4">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="Images/chips.png" alt="Potato Chips">
+            <h3>Potato Chips</h3>
+            <p>$5</p>
+            <button class="add-to-cart-btn" data-id="5">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="Images/chocolate.png" alt="Chocolate Bar">
+            <h3>Chocolate Bar</h3>
+            <p>$3</p>
+            <button class="add-to-cart-btn" data-id="6">Add to Cart</button>
+        </div>
+    </section>
+
+    <section class="cart-list">
+        <!-- Cart items will be dynamically displayed here -->
+    </section>
+
+    <footer>
+        <button class="footer-btn add-item-btn">Add Item</button>
+        <button class="footer-btn view-cart-btn">View Cart</button>
+        <button id="logout-btn" class="footer-btn">Logout</button>
+    </footer>
+    
+
+    <!-- Modal for adding new item -->
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Item</h2>
+            <form id="add-item-form">
+                <label for="item-name">Name:</label>
+                <input type="text" id="item-name" required>
+                <label for="item-price">Price:</label>
+                <input type="number" id="item-price" step="0.01" required>
+                <label for="item-category">Category:</label>
+                <select id="item-category" required>
+                    <!-- Categories will be dynamically added here -->
+                </select>
+                <label for="item-image">Image:</label>
+                <input type="file" id="item-image" accept="image/*" required>
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
